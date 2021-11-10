@@ -7,9 +7,9 @@ const operators = document.querySelectorAll(".operator-btn");
 const extraButtons =document.querySelectorAll(".extra-btn")
 const equals = document.querySelector("#equals")
 
-let firstNumber 
-let secoundNumber
-let signs
+let firstNumber = "";
+let secoundNumber = "";
+let signs = "";
 
 
 
@@ -46,19 +46,19 @@ let signs
           
         } else if (signs == "-") {
             // minus
-          console.log("string fuction fired");
+          
           let result =  Number.parseFloat(firstNumber) - Number.parseFloat(secoundNumber);
           display.innerHTML = `${result}`
 
         } else if (signs == "*") {
            // multiply
           // console.log("string fuction fired");
+          
           let result = Math.imul ( Number.parseFloat(firstNumber) , Number.parseFloat(secoundNumber) );
           display.innerHTML = `${result}`
           
         } else if (signs == "÷") {
-          
-          console.log("string fuction fired");
+          console.log(firstNumber); console.log(secoundNumber);
           let result =  Number.parseFloat(firstNumber) / Number.parseFloat(secoundNumber);
           display.innerHTML = `${result}`
           
