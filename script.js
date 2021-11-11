@@ -10,6 +10,7 @@ const equals = document.querySelector("#equals")
 let firstNumber = "";
 let secoundNumber = "";
 let signs = "";
+let extBtn = "";
 
 
 
@@ -17,8 +18,16 @@ let signs = "";
 // To get numbers to display on screen
   numbers.forEach((number) => {
   number.addEventListener("click" ,(event) => {
+      // if (signs == true){
+      //   display.innerHTML = "";
+      //   console.log("IT WORKING!!!!!!!!");
+      // };    
+   
         let number = event.target.value;
-        display.innerHTML += number
+         
+
+        display.innerHTML += number;
+
   });
   
   
@@ -27,9 +36,9 @@ let signs = "";
 // To save the firstNumber & display the operator as operator has been clicked. 
     operators.forEach((operator) => {
       operator.addEventListener("click" , (event) => {
-          firstNumber = display.innerHTML;
+         firstNumber = display.innerHTML;
          signs = event.target.value;
-        display.innerHTML = signs
+        display.innerHTML = ""
       })
     });
 
@@ -38,7 +47,6 @@ let signs = "";
     
       equals.addEventListener("click" , () => {
         secoundNumber = display.innerHTML;
-        console.log(signs);
         if ( signs == "+") {
             // addition
           let result =  Number.parseFloat(firstNumber) + Number.parseFloat(secoundNumber);
@@ -46,25 +54,48 @@ let signs = "";
           
         } else if (signs == "-") {
             // minus
-          
-          let result =  Number.parseFloat(firstNumber) - Number.parseFloat(secoundNumber);
-          display.innerHTML = `${result}`
+            console.log("string fuction fired");
+            
 
-        } else if (signs == "*") {
-           // multiply
-          // console.log("string fuction fired");
+            let result =  Number.parseFloat(firstNumber) - Number.parseFloat(secoundNumber);
+            display.innerHTML = `${result}`
+            
+            display.innerHTML = Number.parseFloat(firstNumber) - Number.parseFloat(secoundNumber);
+            
+          } else if (signs == "x") {
+            // multiply
+            
+            let result = (Number.parseFloat(firstNumber) * Number.parseFloat(secoundNumber));
+            display.innerHTML = `${result}`
+            
+            console.log(firstNumber); console.log(secoundNumber);
+          } else if (signs == "÷") {
+            console.log("string fuction fired");
+            let result =  Number.parseFloat(firstNumber) / Number.parseFloat(secoundNumber);
+            display.innerHTML = `${result}`
+            
+            
+            
+          }
           
-          let result = Math.imul ( Number.parseFloat(firstNumber) , Number.parseFloat(secoundNumber) );
-          display.innerHTML = `${result}`
-          
-        } else if (signs == "÷") {
-          console.log(firstNumber); console.log(secoundNumber);
-          let result =  Number.parseFloat(firstNumber) / Number.parseFloat(secoundNumber);
-          display.innerHTML = `${result}`
-          
-        }
+        });
+        
+        
+        // extra buttons (AC/Del/[+/-]/)
+        extraButtons.forEach((btn) => {
+          btn.addEventListener("click" , (event)=> {
+            let button = event.target.value;
 
-      });
-     
-
-  // Creating functions to use operators & numbers
+            console.log(button);
+            if ( button == "ac") {
+              firstNumber = "";
+              secoundNumber = "";
+              signs = "";
+              display.innerHTML = "";
+              
+            } 
+          });
+        })
+        console.table(extraButtons[0].value);
+        // Creating functions to use operators & numbers
+        
