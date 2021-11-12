@@ -15,7 +15,10 @@ header {
   align-items: center;
   
   #calculator-frame{
- 
+      background-color: #747272;
+      padding: 10px;
+      border-radius: 14px;
+
   .display {
     border: 1px solid black;
     height: 100px;
@@ -24,6 +27,8 @@ header {
     align-items: flex-end;
     justify-content: flex-end;
     background-color: whitesmoke;
+    width: 214px;
+    overflow: hidden;
   }
   
   .calculator-btn-frame {
@@ -31,6 +36,13 @@ header {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 40px 40px 40px 40px 40px;
     min-width: 200px;
+    gap: 5px;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 14px;
+    padding: 10px;
+    background-color: #747272;
+
   
   > button {
   &:first-child {
@@ -143,6 +155,7 @@ border-radius: 50%;
 #equals {
   background-color: orange;
   color: white;
+  border-radius: 8px;
 }
 
 #equals:hover {

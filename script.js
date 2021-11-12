@@ -43,7 +43,7 @@ let extBtn = "";
     });
 
 
-    // To save the secondNumber & carry out the equals operator
+    // To save the secondNumber & carry out the equals operator & other operators
     
       equals.addEventListener("click" , () => {
         secoundNumber = display.innerHTML;
@@ -54,9 +54,6 @@ let extBtn = "";
           
         } else if (signs == "-") {
             // minus
-            console.log("string fuction fired");
-            
-
             let result =  Number.parseFloat(firstNumber) - Number.parseFloat(secoundNumber);
             display.innerHTML = `${result}`
             
@@ -93,9 +90,21 @@ let extBtn = "";
               signs = "";
               display.innerHTML = "";
               
-            } 
+            } else if (button == "del") {
+
+
+
+            } else if ( button === "%") {
+                  
+
+            } else if ( button === "+/-") {
+
+
+            }
+
+
           });
         })
-        console.table(extraButtons[0].value);
-        // Creating functions to use operators & numbers
+        
+        
         
