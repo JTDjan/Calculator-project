@@ -11,25 +11,28 @@ The aim of this project was to build a simple working calculator that was cable 
 - Java
 
 
-## Steps taken 
+## Design
+The design inspiration original came from the iPhone calculator app although this was achieved with button color style, i found the rest of the body frame would look better to model after a simple pocket calculator. 
 
-The approach I took to build the calculator started with:
+ 
+## Problems encountered & there solution 
+- initially the when carrying out a calculation, the second number would have been saved what was shown on the screen when the equals button was clicked. This meant that the operator would have been part of the second number i.e (+7  or -3) this lead the the desired calculation be wrong because of the added operator ( "5" - "-5" = "10" instead of "5" - "5" = "0").
+Solution: For the operation function i found the best solution was to return an empty string every time an operator was pushed. This would allow the second number to store only the number displayed on screen when the equal button was clicked. 
 
-1. Building the HTMl elements. 
-This started out by creating a <h1> tag to establish the title for the page. I then created a div id of "Calculator" and within that another div with the Id of "calaculator-frame" This allowed me centre the frame by applying a flex to the inital div then centering it by justify content. Within the div calculator-frame i then created two more divs to serpate the display screen from the buttons, with the latter being effected by a grid to give the ability to assign buttosn to specfic point. Each button was given a class & a value so that it could be targerted in javascript file & by css for styling elements. 
+- The multiplication operator was unresponsive when clicked. 
+Solution: Through console logging the function, it came to my attention that the function was not being called. Upon reviewing the code with another person set of eyes & perspective, I came to realise that the value set in my HTML for the operator function did not match the value in my IF Function expression, causing the function to always be false. Changing the values to match rectify this problem. 
 
-2. Linking HTML Element to Javascript using DOM
-For the user to be able to interact with the HTML elements/calulator, the HTML had to be link to the js page by using creating variables & using querySelectors to attached the varables in js to the HTML elements.
-3 let variable (firstNumber / secoundNumber / signs) were created to be able to store temporary numbers & operators to be able to call & interact with each other later on. 
-
-3. Displaying the number on screen 
-To get the numbers to display on the screen with the newly created "number" variable being linked to the button. I used a foreach function to loop the variable so that when the event would happen with a click it would target the value of number then with the "InnerHTML" 
-
-## Problems encountered & there soloution 
+- If a user was to input a long string of numbers greater than the width of the display screen, it would cause the screen to expand to accommodate the number inputed.
+Solution: To fixed this, i set an property to the display screen know as "Overflow" and set it to hidden so that any number entered that exceed the frame would be hidden from view. 
 
 
 
-## Addtional features i would like to add
+## Additional features i would like to add
+- I would have liked to add a "+/-" function that would have been able to toggle the integer display on screen to a positive integer or negative integer.
+- I would have wanted to properly fixed the "del" button to enable me to delete the last number entered on screen. 
+- A second screen shown within the display view that showed the user's input of the firstnumber or previous number. 
+- Redesign the calculation function that would enable the user to calculate multiple set of numbers at one given equation (e.g 10 + 20 + 30 + 40 = 100) instead of being limited to two sets of numbers (e.g 50 + 50 = 100).
+
 
 
 
